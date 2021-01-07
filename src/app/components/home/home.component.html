@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="row  mx-auto">
+    <div class="col-sm-9 col-md-7 col-lg-5 my-3">
+      <div class="p-3 border">
+        <h4>Customer Information</h4>
+        <p><strong>Name :</strong> {{customerStatus.customerName}}</p>
+        <p><strong>Phone Number : {{customerStatus.phoneNo}}</strong></p>
+        <p><strong>Email :</strong> {{customerStatus.emailId}}</p>
+        <p><strong>Address :</strong> {{customerAddress.fullAddress}}</p>
+      </div>
+    </div>
+    <div class="col-sm-9 col-md-7 col-lg-5 my-3">
+      <div class="p-3 border">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="row">Order Date</th>
+              <td>{{details.data.orderDate | date: 'dd/MM/yyyy'}} </td>
+            </tr>
+            <tr>
+              <th>Order Details</th>
+              <th></th>
+              <th> </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let value of orderDetail">
+              <td>{{value.orderName}}</td>
+              <td>x{{value.quantity}}</td>
+              <td> {{value.value | currency: 'INR':true}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="col-sm-9 col-md-7 col-lg-5 my-3">
+      <div class="p-3 border">
+        <h4>{{restaurantDetails.outletName}} ({{restaurantDetails.locality}})</h4>
+        <p><strong>Phone Number :</strong> {{restaurantDetails.mobile}}</p>
+        <p><strong>Alternative Phone Number : {{restaurantDetails.mobile2}}</strong></p>
+        <p><strong>Email :</strong> {{restaurantDetails.email}}</p>
+        <p><strong>Address :</strong> {{restaurantAddress.addressLine}}</p>
+        <div class="text-right">
+          <button type="button" class="btn btn-outline-primary">Update Contact</button>
+        </div>
+       
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
